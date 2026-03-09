@@ -111,3 +111,11 @@
     font-family: var(--font-body);
   }
 }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20%       { transform: translateX(-6px) rotate(-2deg); }
+  40%       { transform: translateX(6px) rotate(2deg); }
+  60%       { transform: translateX(-4px) rotate(-1deg); }
+  80%       { transform: translateX(4px) rotate(1deg); }
+}

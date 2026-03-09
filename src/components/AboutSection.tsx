@@ -1,8 +1,19 @@
+import { useState } from "react";
 import aboutPhoto from "@/assets/about-photo.jpg";
+import kodetristePhoto from "@/assets/kodetristejpg.jpg";
 import { Star } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export default function AboutSection() {
+  const [easterEgg, setEasterEgg] = useState(false);
+  const [shake, setShake] = useState(false);
+
+  const handleDoubleClick = () => {
+    setEasterEgg((prev) => !prev);
+    setShake(true);
+    setTimeout(() => setShake(false), 500);
+  };
+
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -11,9 +22,12 @@ export default function AboutSection() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-accent rounded-2xl blur-2xl opacity-20" />
             <img
-              src={aboutPhoto}
-              alt="Sobre mí"
-              className="relative w-full max-w-md mx-auto rounded-2xl shadow-card object-cover aspect-[3/4]"
+              src={easterEgg ? kodetristePhoto : aboutPhoto}
+              alt={easterEgg ? ":(" : "Sobre mí"}
+              onDoubleClick={handleDoubleClick}
+              className={`relative w-full max-w-md mx-auto rounded-2xl shadow-card object-cover aspect-[3/4] cursor-pointer select-none transition-all duration-300 ${shake ? "animate-[shake_0.4s_ease-in-out]" : ""
+                }`}
+              title=""
             />
           </div>
 
