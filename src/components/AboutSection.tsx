@@ -22,12 +22,11 @@ export default function AboutSection() {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-accent rounded-2xl blur-2xl opacity-20" />
             <img
+              key={easterEgg ? "easter" : "normal"}
               src={easterEgg ? kodetristePhoto : aboutPhoto}
               alt={easterEgg ? ":(" : "Sobre mí"}
               onDoubleClick={handleDoubleClick}
-              className={`relative w-full max-w-md mx-auto rounded-2xl shadow-card object-cover aspect-[3/4] cursor-pointer select-none transition-all duration-300 ${shake ? "animate-[shake_0.4s_ease-in-out]" : ""
-                }`}
-              title=""
+              className={`relative w-full max-w-md mx-auto rounded-2xl shadow-card object-cover aspect-[3/4] cursor-pointer select-none transition-all duration-300${shake ? " shake" : ""}`}
             />
           </div>
 
