@@ -1,6 +1,6 @@
 import { useState } from "react";
 import aboutPhoto from "@/assets/about-photo.jpg";
-import kodetristePhoto from "@/assets/kodetristejpg.jpg";
+import kodetristePhoto from "@/assets/kodetriste.jpg";
 import { Star } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
