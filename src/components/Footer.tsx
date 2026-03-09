@@ -11,7 +11,7 @@ export default function Footer() {
 
     if (timer.current) clearTimeout(timer.current);
 
-    if (clickCount.current >= 5) {
+    if (clickCount.current >= 2) {
       clickCount.current = 0;
       navigate("/admin/login");
       return;
